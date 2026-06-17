@@ -1,0 +1,566 @@
+:root {
+    --bg-dark: #07121f;
+    --bg-dark-soft: #0d2034;
+    --bg-light: #f4f6f8;
+    --bg-white: #ffffff;
+    --text-default: #0f1726;
+    --text-soft: #475569;
+    --text-inverse: #f8fafc;
+    --accent: #d4a537;
+    --border-radius: 24px;
+    --max-width: 1120px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.7;
+    color: var(--text-default);
+    background: var(--bg-white);
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+a.btn {
+    font: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    touch-action: manipulation;
+}
+
+.container {
+    width: min(100%, var(--max-width));
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ── Nav ── */
+
+nav {
+    background: var(--bg-white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    padding: 18px 0;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--text-default);
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* Hamburger button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    min-height: 44px;
+    min-width: 44px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-default);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hamburger[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Buttons ── */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 26px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-gold {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.btn-gold:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 42px rgba(212, 165, 55, 0.25);
+}
+
+/* ── Hero ── */
+
+.hero {
+    background: linear-gradient(180deg, #081423 0%, #0f2238 100%);
+    color: var(--text-inverse);
+    padding: 64px 0 80px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 42px;
+    align-items: start;
+}
+
+.hero-text {
+    max-width: 620px;
+}
+
+.eyebrow {
+    color: #7fd1ff;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 3.6vw, 4.4rem);
+    line-height: 1.02;
+    margin: 0 0 24px;
+}
+
+.hero p {
+    margin: 0 0 20px;
+    color: rgba(248, 250, 252, 0.9);
+}
+
+.opt-in-card {
+    background: var(--bg-white);
+    color: var(--text-default);
+    border-radius: var(--border-radius);
+    padding: 36px 28px;
+    box-shadow: 0 16px 50px rgba(15, 23, 42, 0.2);
+}
+
+.opt-in-card h2 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    line-height: 1.15;
+}
+
+.opt-in-card p {
+    color: var(--text-soft);
+    margin: 18px 0 24px;
+}
+
+.opt-in-card ul {
+    padding-left: 20px;
+    margin: 0 0 20px;
+    color: var(--text-soft);
+}
+
+.opt-in-card ul li {
+    margin-bottom: 10px;
+}
+
+.opt-in-card .btn {
+    width: 100%;
+}
+
+/* ── Reality section ── */
+
+.section-reality {
+    background: var(--bg-light);
+    padding: 72px 0;
+}
+
+.reality-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.reality-text h2 {
+    font-size: clamp(2rem, 2.4vw, 3rem);
+    margin: 0 0 20px;
+    line-height: 1.05;
+}
+
+.accent-label {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.reality-text p {
+    margin: 0 0 22px;
+    color: var(--text-default);
+}
+
+.reality-image {
+    display: grid;
+    place-items: center;
+}
+
+.reality-image img {
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ── CTA section ── */
+
+.section-cta {
+    background: var(--bg-dark-soft);
+    color: var(--text-inverse);
+    padding: 80px 0;
+}
+
+.cta-inner {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-cta h2 {
+    margin: 0 0 20px;
+    font-size: clamp(2rem, 3vw, 3.2rem);
+    line-height: 1.05;
+}
+
+.section-cta p {
+    max-width: 720px;
+    margin: 0 auto 24px;
+    color: rgba(248, 250, 252, 0.85);
+}
+
+.section-cta .btn {
+    margin-top: 8px;
+}
+
+/* ── Modal ── */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 18, 31, 0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal {
+    background: var(--bg-white);
+    border-radius: var(--border-radius);
+    padding: 44px 40px;
+    max-width: 480px;
+    width: 100%;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.25s ease;
+    max-height: 90vh;
+    max-height: 90dvh;
+    overflow-y: auto;
+}
+
+.modal-overlay.open .modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--text-soft);
+    border-radius: 6px;
+    transition: color 0.15s, background 0.15s;
+}
+
+.modal-close:hover {
+    color: var(--text-default);
+    background: var(--bg-light);
+}
+
+.modal-body h2 {
+    margin: 0 0 8px;
+    font-size: 1.6rem;
+    line-height: 1.2;
+}
+
+.modal-body > p {
+    color: var(--text-soft);
+    margin: 0 0 28px;
+}
+
+.modal-form .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.modal-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.modal-form .optional {
+    font-weight: 400;
+    color: var(--text-soft);
+}
+
+.modal-form input {
+    padding: 12px 16px;
+    border: 1.5px solid #d0d5dd;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.modal-form input:focus {
+    border-color: var(--accent);
+}
+
+.modal-form .btn {
+    width: 100%;
+    margin-top: 8px;
+    padding: 16px;
+    font-size: 0.95rem;
+}
+
+.modal-success {
+    text-align: center;
+    padding: 24px 0;
+    color: var(--accent);
+}
+
+.modal-success h3 {
+    margin: 16px 0 8px;
+    font-size: 1.4rem;
+    color: var(--text-default);
+}
+
+.modal-success p {
+    color: var(--text-soft);
+    margin: 0;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+    .hero-grid,
+    .reality-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .opt-in-card {
+        order: -1;
+    }
+
+    .reality-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 20px 0 8px;
+        border-top: 1px solid rgba(0, 0, 0, 0.07);
+        margin-top: 4px;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-links a {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 4px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu .btn {
+        align-self: flex-start;
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 680px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .hero {
+        padding: 48px 0 64px;
+    }
+
+    .opt-in-card {
+        padding: 28px 22px;
+    }
+
+    .section-reality {
+        padding: 52px 0;
+    }
+
+    .section-cta {
+        padding: 60px 0;
+    }
+
+    .modal {
+        padding: 36px 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-overlay {
+        padding: 12px;
+        align-items: flex-end;
+    }
+
+    .modal {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 32px 20px 40px;
+    }
+}
+
+/* ── Mobile-only optimizations ── */
+
+/* Stops page from scrolling when at the top/bottom of the modal form on iOS */
+.modal {
+    overscroll-behavior: contain;
+}
+
+@media (max-width: 768px) {
+    /* Tap feedback — touch devices don't have hover */
+    .btn-gold:active {
+        transform: scale(0.97);
+        box-shadow: none;
+        background: #bf9430;
+    }
+
+    /* Full-width CTAs are easier to tap and more prominent on narrow screens */
+    .reality-text .btn,
+    .section-cta .btn {
+        width: 100%;
+    }
+
+    /* Even headline line breaks — prevents lone words dangling on their own line */
+    h1, h2, h3 {
+        text-wrap: balance;
+    }
+
+}
