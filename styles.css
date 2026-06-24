@@ -50,6 +50,10 @@ button {
     touch-action: manipulation;
 }
 
+em {
+    font-style: italic;
+}
+
 .container {
     width: min(100%, var(--max-width));
     margin: 0 auto;
@@ -105,7 +109,6 @@ nav {
     color: var(--accent);
 }
 
-/* Hamburger button */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -163,299 +166,301 @@ nav {
 
 .btn-gold:hover {
     transform: translateY(-1px);
-    box-shadow: 0 18px 42px rgba(212, 165, 55, 0.25);
+    box-shadow: 0 18px 42px rgba(212, 165, 55, 0.3);
 }
 
-/* ── Hero ── */
-
-.hero {
-    background: linear-gradient(180deg, #081423 0%, #0f2238 100%);
-    color: var(--text-inverse);
-    padding: 64px 0 80px;
+.btn-large {
+    padding: 18px 36px;
+    font-size: 1.05rem;
 }
 
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 42px;
-    align-items: start;
-}
-
-.hero-text {
-    max-width: 620px;
-}
+/* ── Eyebrow labels ── */
 
 .eyebrow {
-    color: #7fd1ff;
+    color: var(--accent);
     font-size: 0.85rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     margin: 0 0 16px;
 }
 
-.hero h1 {
-    font-size: clamp(2rem, 3.6vw, 4.4rem);
-    line-height: 1.02;
-    margin: 0 0 24px;
+.eyebrow-dark {
+    color: var(--accent);
 }
 
-.hero p {
-    margin: 0 0 20px;
-    color: rgba(248, 250, 252, 0.9);
+/* ── Section 1: Thank You Hero ── */
+
+.ty-hero {
+    background: linear-gradient(160deg, #050e1a 0%, #0d2034 100%);
+    color: var(--text-inverse);
+    padding: 72px 0 96px;
 }
 
-.opt-in-card {
-    background: var(--bg-white);
-    color: var(--text-default);
-    border-radius: var(--border-radius);
-    padding: 36px 28px;
-    box-shadow: 0 16px 50px rgba(15, 23, 42, 0.2);
-}
-
-.opt-in-card h2 {
-    margin-top: 0;
-    font-size: 1.75rem;
-    line-height: 1.15;
-}
-
-.opt-in-card p {
-    color: var(--text-soft);
-    margin: 18px 0 24px;
-}
-
-.opt-in-card ul {
-    padding-left: 20px;
-    margin: 0 0 20px;
-    color: var(--text-soft);
-}
-
-.opt-in-card ul li {
-    margin-bottom: 10px;
-}
-
-.opt-in-card .btn {
-    width: 100%;
-}
-
-/* ── Reality section ── */
-
-.section-reality {
-    background: var(--bg-light);
-    padding: 72px 0;
-}
-
-.reality-grid {
+.ty-hero-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 56px;
     align-items: center;
 }
 
-.reality-text h2 {
-    font-size: clamp(2rem, 2.4vw, 3rem);
-    margin: 0 0 20px;
-    line-height: 1.05;
+.ty-hero-text {
+    max-width: 560px;
 }
 
-.accent-label {
-    display: inline-block;
-    margin-bottom: 20px;
+.ty-hero-text h1 {
+    font-size: clamp(2.6rem, 4.2vw, 5.2rem);
+    line-height: 1.0;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+}
+
+.ty-intro {
+    font-size: 1.05rem;
+    color: rgba(248, 250, 252, 0.85);
+    margin: 0 0 32px;
+    max-width: 480px;
+}
+
+.delivery-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(212, 165, 55, 0.12);
+    border: 1px solid rgba(212, 165, 55, 0.35);
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--accent);
+}
+
+.delivery-check {
+    font-size: 1rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-size: 0.8rem;
 }
 
-.reality-text p {
-    margin: 0 0 22px;
-    color: var(--text-default);
+/* Book image with atmospheric gold glow — aesthetic risk */
+
+.ty-book-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.reality-image {
-    display: grid;
-    place-items: center;
+.book-glow {
+    position: relative;
+    display: inline-block;
 }
 
-.reality-image img {
-    border-radius: 12px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+.book-glow::before {
+    content: "";
+    position: absolute;
+    inset: -60px;
+    background: radial-gradient(ellipse at 50% 55%, rgba(212, 165, 55, 0.4) 0%, rgba(212, 165, 55, 0.08) 50%, transparent 75%);
+    z-index: 0;
+    pointer-events: none;
 }
 
-/* ── CTA section ── */
-
-.section-cta {
-    background: var(--bg-dark-soft);
-    color: var(--text-inverse);
-    padding: 80px 0;
+.book-glow img {
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow:
+        0 0 60px rgba(212, 165, 55, 0.55),
+        0 32px 72px rgba(0, 0, 0, 0.6);
+    max-width: 360px;
+    width: 100%;
 }
 
-.cta-inner {
-    text-align: center;
+/* ── Section 2: Book an Appointment ── */
+
+.section-book {
+    background: var(--bg-light);
+    padding: 88px 0 96px;
+}
+
+.book-inner {
     max-width: 760px;
     margin: 0 auto;
-    padding: 0 24px;
+    text-align: center;
 }
 
-.section-cta h2 {
-    margin: 0 0 20px;
+.book-inner h2 {
     font-size: clamp(2rem, 3vw, 3.2rem);
     line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
 }
 
-.section-cta p {
-    max-width: 720px;
-    margin: 0 auto 24px;
-    color: rgba(248, 250, 252, 0.85);
-}
-
-.section-cta .btn {
-    margin-top: 8px;
-}
-
-/* ── Modal ── */
-
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(7, 18, 31, 0.72);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    z-index: 500;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.25s ease;
-}
-
-.modal-overlay.open {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.modal {
-    background: var(--bg-white);
-    border-radius: var(--border-radius);
-    padding: 44px 40px;
-    max-width: 480px;
-    width: 100%;
-    position: relative;
-    transform: translateY(20px);
-    transition: transform 0.25s ease;
-    max-height: 90vh;
-    max-height: 90dvh;
-    overflow-y: auto;
-}
-
-.modal-overlay.open .modal {
-    transform: translateY(0);
-}
-
-.modal-close {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    min-width: 44px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.6rem;
-    line-height: 1;
+.book-intro {
+    font-size: 1.05rem;
     color: var(--text-soft);
-    border-radius: 6px;
-    transition: color 0.15s, background 0.15s;
+    margin: 0 0 48px;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.modal-close:hover {
-    color: var(--text-default);
-    background: var(--bg-light);
-}
-
-.modal-body h2 {
-    margin: 0 0 8px;
-    font-size: 1.6rem;
-    line-height: 1.2;
-}
-
-.modal-body > p {
-    color: var(--text-soft);
-    margin: 0 0 28px;
-}
-
-.modal-form .field {
+.call-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 52px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    margin-bottom: 18px;
+    gap: 0;
+    text-align: left;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.modal-form label {
-    font-weight: 600;
-    font-size: 0.9rem;
+.call-benefits li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
 }
 
-.modal-form .optional {
-    font-weight: 400;
-    color: var(--text-soft);
+.call-benefits li:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
 
-.modal-form input {
-    padding: 12px 16px;
-    border: 1.5px solid #d0d5dd;
-    border-radius: 10px;
+.call-benefits strong {
     font-size: 1rem;
-    outline: none;
-    transition: border-color 0.2s;
-    width: 100%;
-}
-
-.modal-form input:focus {
-    border-color: var(--accent);
-}
-
-.modal-form .btn {
-    width: 100%;
-    margin-top: 8px;
-    padding: 16px;
-    font-size: 0.95rem;
-}
-
-.modal-success {
-    text-align: center;
-    padding: 24px 0;
-    color: var(--accent);
-}
-
-.modal-success h3 {
-    margin: 16px 0 8px;
-    font-size: 1.4rem;
+    font-weight: 700;
     color: var(--text-default);
+    line-height: 1.3;
 }
 
-.modal-success p {
+.call-benefits span {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+    line-height: 1.6;
+}
+
+.book-cta-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.no-obligation {
+    font-size: 0.85rem;
     color: var(--text-soft);
     margin: 0;
+    letter-spacing: 0.02em;
+}
+
+/* ── Section 3: RIA Value ── */
+
+.section-ria {
+    background: var(--bg-dark-soft);
+    color: var(--text-inverse);
+    padding: 88px 0 96px;
+}
+
+.ria-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.ria-header {
+    max-width: 720px;
+}
+
+.ria-header h2 {
+    font-size: clamp(2rem, 2.8vw, 3.2rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+}
+
+.ria-intro {
+    font-size: 1.05rem;
+    color: rgba(248, 250, 252, 0.78);
+    margin: 0;
+    max-width: 640px;
+}
+
+.ria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.ria-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 32px;
+    background: rgba(212, 165, 55, 0.07);
+    border: 1px solid rgba(212, 165, 55, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 0 32px rgba(212, 165, 55, 0.15), inset 0 0 24px rgba(212, 165, 55, 0.05);
+}
+
+.ria-card-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.ria-card h3 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 700;
+}
+
+.ria-card p {
+    font-size: 0.95rem;
+    color: rgba(248, 250, 252, 0.72);
+    margin: 0;
+    line-height: 1.65;
+}
+
+.ria-close {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 48px;
+}
+
+.ria-close p {
+    font-size: 1.1rem;
+    color: rgba(248, 250, 252, 0.85);
+    margin: 0;
+    max-width: 580px;
+    line-height: 1.6;
 }
 
 /* ── Responsive ── */
 
 @media (max-width: 900px) {
-    .hero-grid,
-    .reality-grid {
+    .ty-hero-grid {
         grid-template-columns: 1fr;
+        gap: 48px;
     }
 
-    .opt-in-card {
+    .ty-book-wrap {
         order: -1;
     }
 
-    .reality-image {
-        order: -1;
+    .book-glow img {
+        max-width: 280px;
+    }
+
+    .ria-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
@@ -496,6 +501,18 @@ nav {
         align-self: flex-start;
         margin-top: 8px;
     }
+
+    .btn-large {
+        width: 100%;
+    }
+
+    .ria-close {
+        align-items: stretch;
+    }
+
+    .ria-close .btn {
+        text-align: center;
+    }
 }
 
 @media (max-width: 680px) {
@@ -503,64 +520,51 @@ nav {
         padding: 0 16px;
     }
 
-    .hero {
-        padding: 48px 0 64px;
+    .ty-hero {
+        padding: 52px 0 72px;
     }
 
-    .opt-in-card {
-        padding: 28px 22px;
+    .section-book {
+        padding: 64px 0 72px;
     }
 
-    .section-reality {
-        padding: 52px 0;
+    .section-ria {
+        padding: 64px 0 72px;
     }
 
-    .section-cta {
-        padding: 60px 0;
+    .ria-inner {
+        gap: 44px;
     }
 
-    .modal {
-        padding: 36px 24px;
+    .ria-card {
+        padding: 24px;
     }
 }
 
 @media (max-width: 480px) {
-    .modal-overlay {
-        padding: 12px;
-        align-items: flex-end;
-    }
-
-    .modal {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        padding: 32px 20px 40px;
+    .book-glow img {
+        max-width: 220px;
     }
 }
 
-/* ── Mobile-only optimizations ── */
+/* ── Motion preferences ── */
 
-/* Stops page from scrolling when at the top/bottom of the modal form on iOS */
-.modal {
-    overscroll-behavior: contain;
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none;
+    }
 }
+
+/* ── Tap feedback (touch) ── */
 
 @media (max-width: 768px) {
-    /* Tap feedback — touch devices don't have hover */
     .btn-gold:active {
         transform: scale(0.97);
         box-shadow: none;
         background: #bf9430;
     }
 
-    /* Full-width CTAs are easier to tap and more prominent on narrow screens */
-    .reality-text .btn,
-    .section-cta .btn {
-        width: 100%;
-    }
-
-    /* Even headline line breaks — prevents lone words dangling on their own line */
     h1, h2, h3 {
         text-wrap: balance;
     }
-
 }
